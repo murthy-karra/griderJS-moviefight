@@ -5,23 +5,10 @@ const fetchData = async (searchTerm) => {
       s: searchTerm,
     },
   });
-  console.log(response.data);
+  return response.data.Search;
 };
 
 const input = document.querySelector('input');
-
-const debounce = (func, delay = 1000) => {
-  let timeoutId;
-  return (...args) => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-      console.log('Pausing');
-    }
-    timeoutId = setTimeout(() => {
-      func.apply(null, args);
-    }, delay);
-  };
-};
 
 // let timeoutId;
 // const onInput = (event) => {
@@ -33,8 +20,10 @@ const debounce = (func, delay = 1000) => {
 //   }, 1000);
 // };
 
-const onInput = (event) => {
-  fetchData(event.target.value);
+const onInput = async (event) => {
+  const movies = await fetchData(event.target.value);
+  console.log(movies);
 };
 
 input.addEventListener('input', debounce(onInput, 500));
+// 09689992987, 800 - 797 - 2326
