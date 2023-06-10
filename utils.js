@@ -10,3 +10,14 @@ const debounce = (func, delay = 1000) => {
     }, delay);
   };
 };
+
+// Old way of using a debounce function
+// let timeoutId;
+// const onInput = (event) => {
+//   if (timeoutId) {
+//     clearTimeout(timeoutId);
+//   }
+//   timeoutId = setTimeout(() => {
+//     fetchData(event.target.value);
+//   }, 1000);
+// };
