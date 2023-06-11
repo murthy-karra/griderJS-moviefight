@@ -25,5 +25,4 @@ const onInput = async (event) => {
     document.querySelector('#target').appendChild(div);
   }
 };
-
 input.addEventListener('input', debounce(onInput, 500));
